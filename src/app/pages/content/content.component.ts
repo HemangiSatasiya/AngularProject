@@ -30,6 +30,7 @@ imageClicked(img: any) {
   const found = this.imgClickedArr.some((el: any) => el.id === img.id);
   if (!found) {
     this.imgClickedArr.push(img);
+
     
   }
   if (found) {
@@ -37,6 +38,9 @@ imageClicked(img: any) {
       this.imgClickedArr.findIndex((a) => a.id === img.id),
       1
     );
+
+
+    
   
   }
   console.log('clickedArr', this.imgClickedArr);

@@ -1,22 +1,46 @@
-  <div >
-    <div class="row">
+
+<div class="container">
+
+  <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Thumbnail Gallery</h1>
+
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-center text-lg-start">
+    <ng-container *ngFor="let img of Image">
+
+    <div class="  col-lg-3 col-md-4 col-6 " >
+      <a href="#" class="above d-block mb-4 h-100">
+        <img class=" demo img-fluid"   src="{{img.imgPath}}"  (click)="imageClicked(img)" alt="">
+        <span class=" upper"> 
+          <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
+            <div class="above" *ngIf="el.id == img.id">{{ i+1 }}
+            </div>
+          </ng-container>
+        </span>
+      </a>
+    </div>
+  </ng-container>
+  </div>
+
+</div> 
+
+    <!-- <div class="row">
       <ng-container *ngFor="let img of Image">
         <div class="col-md-3 mb-4">
-          <div class="container">
+          <div class=" container">
             <img
-              class="img-click"
+              class=" demo img-click"
               src="{{ img.imgPath }}"
               alt="NA"
               (click)="imageClicked(img)"
               height="300px"
               width="300px"
             />
-            <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
+          <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
               <div class="top-right" id="selected" *ngIf="el.id == img.id">{{ i+1 }}</div>
               </ng-container>
           </div>
         </div>
       </ng-container>
-    </div>
-  </div>
+    </div> -->
   

@@ -1,4 +1,4 @@
- #selected {
+.selected {
     filter: brightness(0.2);
 }
 
@@ -20,6 +20,26 @@
     position: absolute;
     top: 8px;
     right: 16px;
-    color: black;
+    color: blue;
+
+  }
+  .above{
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+  }
+
+
+  .demo:hover{
+    /* opacity: 0.2; */
+    -webkit-filter: brightness(30%);
   }
   
+  .upper {
+    position:relative; 
+    opacity: 0.1;
+    -webkit-filter: brightness(40%);
+    top: -140px;
+    left: 140px;
+    
+  }
