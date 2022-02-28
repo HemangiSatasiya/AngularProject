@@ -1,0 +1,22 @@
+  <div >
+    <div class="row">
+      <ng-container *ngFor="let img of Image">
+        <div class="col-md-3 mb-4">
+          <div class="container">
+            <img
+              class="img-click"
+              src="{{ img.imgPath }}"
+              alt="NA"
+              (click)="imageClicked(img)"
+              height="300px"
+              width="300px"
+            />
+            <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
+              <div class="top-right" id="selected" *ngIf="el.id == img.id">{{ i+1 }}</div>
+              </ng-container>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  
