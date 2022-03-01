@@ -21,8 +21,17 @@ interface IMAGE{
 
 export class ContentComponent implements OnInit {
 
+
 Image : IMAGE[] = ImgJson;
 imgClickedArr: any[] = [];
+suraj : number = 5;
+
+limiter(event){
+   console.log(event)
+   this.suraj = event
+ 
+  }
+
 ngOnInit(): void {
   console.log('oninit');
 }
@@ -30,7 +39,7 @@ imageClicked(img: any) {
   const found = this.imgClickedArr.some((el: any) => el.id === img.id);
   if (!found) {
     this.imgClickedArr.push(img);
-
+    img.isChecked = true
     
   }
   if (found) {
@@ -38,10 +47,7 @@ imageClicked(img: any) {
       this.imgClickedArr.findIndex((a) => a.id === img.id),
       1
     );
-
-
-    
-  
+    img.isChecked = false
   }
   console.log('clickedArr', this.imgClickedArr);
 }

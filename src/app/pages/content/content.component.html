@@ -1,46 +1,51 @@
-
 <div class="container">
+  <div class="row">
+    <h1 class="col">Image Gallery</h1>
+    <li class="nav-item dropdown col d-flex justify-content-center">
+      <a
+        class="nav-link dropdown-toggle my-5"
+        href="#"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
 
-  <h1 class="fw-light text-center text-lg-start mt-4 mb-0">Thumbnail Gallery</h1>
-
-  <hr class="mt-2 mb-5">
-
-  <div class="row text-center text-lg-start">
-    <ng-container *ngFor="let img of Image">
-
-    <div class="  col-lg-3 col-md-4 col-6 " >
-      <a href="#" class="above d-block mb-4 h-100">
-        <img class=" demo img-fluid"   src="{{img.imgPath}}"  (click)="imageClicked(img)" alt="">
-        <span class=" upper"> 
-          <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
-            <div class="above" *ngIf="el.id == img.id">{{ i+1 }}
-            </div>
-          </ng-container>
-        </span>
+        style="color: black;
+              font-size: 20px;
+              
+              "
+      >
+        Select No. of Images
       </a>
-    </div>
-  </ng-container>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="position: relative;">
+        <li><a class="dropdown-item" href="#" (click)="limiter(5)">5</a></li>
+        <li><a class="dropdown-item" href="#" (click)="limiter(10)">10</a></li>
+        <li><a class="dropdown-item" href="#" (click)="limiter(15)">15</a></li>
+        <li><a class="dropdown-item" href="#" (click)="limiter(20)">20</a></li>
+      </ul>
+    </li>
   </div>
 
-</div> 
+  <hr class="mt-2 mb-5" />
 
-    <!-- <div class="row">
-      <ng-container *ngFor="let img of Image">
-        <div class="col-md-3 mb-4">
-          <div class=" container">
-            <img
-              class=" demo img-click"
-              src="{{ img.imgPath }}"
-              alt="NA"
-              (click)="imageClicked(img)"
-              height="300px"
-              width="300px"
-            />
-          <ng-container *ngFor="let el of imgClickedArr; let i=index;" >
-              <div class="top-right" id="selected" *ngIf="el.id == img.id">{{ i+1 }}</div>
-              </ng-container>
-          </div>
-        </div>
-      </ng-container>
-    </div> -->
-  
+  <div class="row text-center text-lg-start">
+    <ng-container *ngFor="let img of Image.slice(0, suraj)">
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="#" class="above d-block mb-4 h-100">
+          <img
+            class="demo img-fluid"
+            src="{{ img.imgPath }}"
+            [class.demo]="img.isChecked"
+            (click)="imageClicked(img)"
+            alt=""
+          />
+          <span class="upper">
+            <ng-container *ngFor="let el of imgClickedArr; let i = index">
+              <div class="above" *ngIf="el.id == img.id">{{ i + 1 }}</div>
+            </ng-container>
+          </span>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>
