@@ -1,54 +1,86 @@
-.container ol li a{
+.changes {
+  border: 0.5px solid black;
+  padding: 20px;
+  box-shadow: 6px 9px 4px 2px #d9d9d9;
+  border-radius: 10px;
+}
+.container ol li a {
   text-decoration: none;
 }
 .selected {
-    filter: brightness(0.2);
+  filter: brightness(0.2);
 }
 
-.notselected{
-
-  filter:brightness(1);
+.notselected {
+  filter: brightness(1);
 }
 
- .img-click {
-    cursor: pointer;
-  }
-  .container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  /* Top right text */
-  .top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    
-    color: blue;
+.img-click {
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
 
-  }
-  .above{
-    text-decoration: none;
-    color: white;
-    font-size: 30px;
-  }
+  color: blue;
+}
+.above {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+
+  /* border: 2px solid black; */
+}
+.shade {
+  /* border: 0.5px solid black; */
+  /* padding: 20px; */
+  /* box-shadow: 5px 5px #D3D3D3;
+    border-radius: 10px; */
+}
+.number div {
+  /* border: 2px solid white;
+        border-radius: 20px;
+        padding: 5px; */
+
+  /* background-color:black; */
+  border: 2px solid white;
+  height: 50px;
+  padding: 6px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 50px;
+}
+
 .demo {
   -webkit-filter: brightness(30%);
+  /* border: 0.5px solid black; */
+  /* padding: 20px; */
+  box-shadow: 0px 2px 4px 2px #d9d9d9;
+  border-radius: 10px;
+  margin-bottom: -43px;
+
   /* border: 10px solid blue; */
-  
 }
 
-  .demo:hover{
-    /* opacity: 0.2; */
-    -webkit-filter: brightness(30%);
-  }
-  
-  .upper {
-    position:relative; 
-    opacity: 0.1;
-    -webkit-filter: brightness(40%);
-    top: -200px;
-    left: 230px;
-    border-radius: 10px;
-    
-  } 
+.demo:hover {
+  /* opacity: 0.2; */
+  -webkit-filter: brightness(30%);
+}
+
+.upper {
+  position: relative;
+  opacity: 0.1;
+  -webkit-filter: brightness(40%);
+  top: -142px;
+  left: -10px;
+  border-radius: 10px;
+  text-align: right;
+}
