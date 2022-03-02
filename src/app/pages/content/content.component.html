@@ -1,7 +1,7 @@
-<div class="container">
+<div class="changes container mt-5 mb-5" >
   <div class="row">
-    <h1 class="col">Image Gallery</h1>
-    <li class="nav-item dropdown col d-flex justify-content-center">
+    <h1 class="col" style="text-align:left;">Images</h1>
+    <li class="nav-item dropdown col d-flex justify-content-end">
       <a
         class="nav-link dropdown-toggle my-5"
         href="#"
@@ -12,6 +12,7 @@
 
         style="color: black;
               font-size: 20px;
+              text-align: right;
               
               "
       >
@@ -32,16 +33,19 @@
     <ng-container *ngFor="let img of Image.slice(0, suraj)">
       <div class="col-lg-3 col-md-4 col-6">
         <a href="#" class="above d-block mb-4 h-100">
+          <div class="shade">
           <img
-            class="demo img-fluid"
+            class="demo img-fluid "
             src="{{ img.imgPath }}"
             [class.demo]="img.isChecked"
             (click)="imageClicked(img)"
             alt=""
+            style="border-radius: 13px;"
           />
+          </div>
           <span class="upper">
             <ng-container *ngFor="let el of imgClickedArr; let i = index">
-              <div class="above" *ngIf="el.id == img.id">{{ i + 1 }}</div>
+              <div  *ngIf="el.id == img.id"><span class="above"><div class="number"><span class="above"></span>{{ i + 1 }}</div></span></div>
             </ng-container>
           </span>
         </a>
